@@ -4,7 +4,7 @@ import { EngineEntity } from 'src/modules/engines/infrastructure/persistence/typ
 import { IssueSeverityLevel, IssuePartCategory } from 'src/modules/issues/domain/issue-enums'
 import { ISSUE_CONSTRAINTS as LIMITS } from '../../../domain/issue-constants'
 
-@Entity('issues')
+@Entity({ name: 'issues', schema: 'maintenance' })
 @Check(`char_length("code") >= ${LIMITS.CODE.MIN_LENGTH} AND char_length("code") <= ${LIMITS.CODE.MAX_LENGTH}`)
 @Check(`char_length("description") >= ${LIMITS.DESCRIPTION.MIN_LENGTH} AND char_length("description") <= ${LIMITS.DESCRIPTION.MAX_LENGTH}`)
 @Index('IDX_ISSUE_CODE', ['code'], { unique: true })

@@ -1,12 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { DataSource, EntityManager, EntityMetadata } from 'typeorm'
-import { Injectable } from '@nestjs/common'
+import { Injectable, OnModuleInit } from '@nestjs/common'
 import { EnvironmentArranger } from '../../arranger/environment-arranger'
 
 @Injectable()
-export class TypeOrmEnvironmentArranger extends EnvironmentArranger {
+export class TypeOrmEnvironmentArranger
+  extends EnvironmentArranger
+  implements OnModuleInit
+{
   constructor(private dataSource: DataSource) {
     super()
+  }
+
+  async onModuleInit() {
+    if (!this.dataSource.isInitialized) {
+      await this.dataSource.initialize()
+    }
+
+    await this.initialize()
+    await this.dataSource.synchronize()
   }
 
   protected client(): EntityManager {
@@ -45,9 +57,11 @@ export class TypeOrmEnvironmentArranger extends EnvironmentArranger {
     return (repository.findBy(query) as unknown as T[]) || []
   }
 
-  protected async cleanDatabase(): Promise<void> {
+  private async cleanDatabase(): Promise<void> {
     const entities = this.entities()
-    const tableNames = entities.map(e => `"${e.tableName}"`).join(', ')
+    const tableNames = entities
+      .map(e => (e.schema ? `"${e.schema}"."${e.tableName}"` : `"${e.tableName}"`))
+      .join(', ')
 
     if (!tableNames.length) {
       return
@@ -60,7 +74,23 @@ export class TypeOrmEnvironmentArranger extends EnvironmentArranger {
     }
   }
 
+  private async initialize(): Promise<void> {
+    const schemas = this.schemas()
+
+    for (const schema of schemas) {
+      await this.client().query(`CREATE SCHEMA IF NOT EXISTS "${schema}"`)
+    }
+  }
+
   private entities(): EntityMetadata[] {
     return this.dataSource.entityMetadatas
+  }
+
+  private schemas(): string[] {
+    const schemas = this.entities()
+      .map(e => e.schema)
+      .filter((schema): schema is string => !!schema && schema !== 'public')
+
+    return [...new Set(schemas)]
   }
 }

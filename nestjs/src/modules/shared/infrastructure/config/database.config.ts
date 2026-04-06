@@ -14,6 +14,7 @@ export default registerAs('typeorm', () => {
     ...file.typeorm,
     entities: [join(__dirname, '../../../**/*.entity.{ts,js}')],
     migrations: [join(__dirname, '../persistence/migrations/*.{ts,js}')],
+    migrationsTableName: 'typeorm_migrations',
     subscribers: []
   }
 })

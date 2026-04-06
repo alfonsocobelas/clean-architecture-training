@@ -33,10 +33,6 @@ beforeAll(async () => {
 
   dataSource = moduleFixture.get<DataSource>(DataSource)
   environmentArranger = moduleFixture.get<EnvironmentArranger>(EnvironmentArranger)
-
-  if (!dataSource.isInitialized) {
-    await dataSource.initialize()
-  }
 })
 
 afterAll(async () => {

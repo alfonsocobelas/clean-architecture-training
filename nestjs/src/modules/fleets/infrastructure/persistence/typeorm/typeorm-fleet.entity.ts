@@ -3,7 +3,7 @@ import { OperationRegion, FleetType, FleetStatus } from 'src/modules/fleets/doma
 import { CompanyEntity } from 'src/modules/companies/infrastructure/persistence/typeorm/typeorm-company.entity'
 import { FLEET_CONSTRAINTS as LIMITS } from '../../../domain/fleet-constants'
 
-@Entity('fleets')
+@Entity({ name: 'fleets', schema: 'operations' })
 @Check(`char_length("name") >= ${LIMITS.NAME.MIN_LENGTH} AND char_length("name") <= ${LIMITS.NAME.MAX_LENGTH}`)
 @Index('IDX_FLEET_NAME', ['name'], { unique: true })
 

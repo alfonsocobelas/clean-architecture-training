@@ -9,8 +9,8 @@
     "password": "sup3rs3cr3t",
     "database": "mod-monolith-arch-nestjs-test",
     "autoLoadEntities": true,
-    "synchronize": true,
-    "dropSchema": true,
+    "synchronize": false,
+    "dropSchema": false,
     "logging": false,
     "migrationsRun": false,
     "migrationsTransactionMode": "all"

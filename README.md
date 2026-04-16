@@ -1,4 +1,4 @@
-# SUMMARY
+# Summary
 
 - Built following Clean Architecture principles, with clear separation into Domain, Application, Infrastructure, and Ports/Adapters layers.
 - Modular monolithic repository: each business context is organized as an independent module within the same codebase.

@@ -6,7 +6,7 @@
     "port": 5433,
     "username": "sheriff",
     "password": "sup3rs3cr3t",
-    "database": "mod-monolith-arch-nodejs-test",
+    "database": "clean-arch-nodejs-test",
     "synchronize": false,
     "dropSchema": false,
     "logging": false,

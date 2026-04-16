@@ -67,7 +67,7 @@
       "runtimeExecutable": "/Users/alfonso.dominguez/.nvm/versions/node/v22.14.0/bin/node",
       "args": [
         "-p",
-        "modMonolithArchNodejs"
+        "cleanArchNodejs"
       ],
       "cwd": "${workspaceFolder}",
       "env": {
@@ -86,7 +86,7 @@
       "runtimeExecutable": "/Users/alfonso.dominguez/.nvm/versions/node/v22.14.0/bin/node",
       "args": [
         "-p",
-        "modMonolithArchNodejs",
+        "cleanArchNodejs",
         "--tags",
         "@only"
       ],

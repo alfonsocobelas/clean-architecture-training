@@ -1,4 +1,4 @@
-name:  Modular Monolith Arch NestJS CI
+name:  Clean Arch NestJS CI
 
 on:
   push:
@@ -6,13 +6,13 @@ on:
       - master
     paths:
       - 'nestjs/**'
-      - '.github/workflows/mod-monolith-arch-nestjs-ci.yml'
+      - '.github/workflows/clean-arch-nestjs-ci.yml'
   pull_request:
     branches:
       - master
     paths:
       - 'nestjs/**'
-      - '.github/workflows/mod-monolith-arch-nestjs-ci.yml'
+      - '.github/workflows/clean-arch-nestjs-ci.yml'
 
 jobs:
   build:
@@ -96,7 +96,7 @@ jobs:
         env:
           POSTGRES_USER: sheriff
           POSTGRES_PASSWORD: sup3rs3cr3t
-          POSTGRES_DB: mod-monolith-arch-nestjs-test
+          POSTGRES_DB: clean-arch-nestjs-test
         ports:
           - 5433:5432
         options: >-
@@ -131,7 +131,7 @@ jobs:
         env:
           POSTGRES_USER: sheriff
           POSTGRES_PASSWORD: sup3rs3cr3t
-          POSTGRES_DB: mod-monolith-arch-nestjs-test
+          POSTGRES_DB: clean-arch-nestjs-test
         ports:
           - 5433:5432
         options: >-

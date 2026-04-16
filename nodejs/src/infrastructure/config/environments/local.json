@@ -6,7 +6,7 @@
     "port": 5432,
     "username": "sheriff",
     "password": "sup3rs3cr3t",
-    "database": "mod-monolith-arch-nodejs-local",
+    "database": "clean-arch-nodejs-local",
     "synchronize": false,
     "dropSchema": false,
     "logging": false,

@@ -1,12 +1,11 @@
 {
-  "name": "mod-monolith-arch-nestjs",
+  "name": "clean-arch-nestjs",
   "version": "1.0.0",
-  "description": "Modular Monolith Architecture with NestJS example",
+  "description": "Clean Architecture with NestJS example",
   "author": "Alfonso Cobelas",
   "license": "ISC",
   "keywords": [
-    "modular",
-    "monolith",
+    "clean",
     "architecture",
     "nestjs"
   ],
@@ -29,7 +28,7 @@
     "test": "jest",
     "test:unit": "NODE_ENV=test JEST_ENV='unit' jest",
     "test:integration": "NODE_ENV=test JEST_ENV='integration' jest --runInBand",
-    "test:acceptance": "NODE_ENV=test cucumber-js -p modMonolithArchNestjs",
+    "test:acceptance": "NODE_ENV=test cucumber-js -p cleanArchNestjs",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",

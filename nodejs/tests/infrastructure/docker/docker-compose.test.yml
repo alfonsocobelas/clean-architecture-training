@@ -3,7 +3,7 @@ services:
     image: postgres:15
     environment:
       - POSTGRES_HOST=localhost
-      - POSTGRES_DB=mod-monolith-arch-nodejs-test
+      - POSTGRES_DB=clean-arch-nodejs-test
       - POSTGRES_USER=sheriff
       - POSTGRES_PASSWORD=sup3rs3cr3t
     volumes:

@@ -1,12 +1,11 @@
 {
-  "name": "mod-monolith-arch-nodejs",
+  "name": "clean-arch-nodejs",
   "version": "1.0.0",
-  "description": "Modular Monolith Architecture with NodeJS example",
+  "description": "Clean Architecture with NodeJS example",
   "author": "Alfonso Cobelas",
   "license": "ISC",
   "keywords": [
-    "modular",
-    "monolith",
+    "clean",
     "architecture",
     "nodejs"
   ],
@@ -32,7 +31,7 @@
     "test": "npm run test:unit &&  npm run test:integration && npm run test:acceptance",
     "test:unit": "NODE_ENV=test JEST_ENV='unit' jest",
     "test:integration": "NODE_ENV=test JEST_ENV='integration' jest --runInBand",
-    "test:acceptance": "NODE_ENV=test cucumber-js -p modMonolithArchNodejs",
+    "test:acceptance": "NODE_ENV=test cucumber-js -p cleanArchNodejs",
     "clear:test:unit": "NODE_ENV=test JEST_ENV='unit' jest --clearCache",
     "debug:test:unit": "NODE_ENV=test JEST_ENV='unit' JEST_SEED=$SEED jest --runInBand --watch",
     "debug:test:integration": "NODE_ENV=test JEST_ENV='integration' JEST_SEED=$SEED jest --runInBand --watch",

@@ -1,4 +1,4 @@
-name: Modular Monolith Arch Node.js CI
+name:  Clean Arch Node.js CI
 
 on:
   push:
@@ -6,13 +6,13 @@ on:
       - master
     paths:
       - 'nodejs/**'
-      - '.github/workflows/mod-monolith-arch-nodejs-ci.yml'
+      - '.github/workflows/clean-arch-nodejs-ci.yml'
   pull_request:
     branches:
       - master
     paths:
       - 'nodejs/**'
-      - '.github/workflows/mod-monolith-arch-nodejs-ci.yml'
+      - '.github/workflows/clean-arch-nodejs-ci.yml'
 
 jobs:
   build:
@@ -96,7 +96,7 @@ jobs:
         env:
           POSTGRES_USER: sheriff
           POSTGRES_PASSWORD: sup3rs3cr3t
-          POSTGRES_DB: mod-monolith-arch-nodejs-test
+          POSTGRES_DB: clean-arch-nodejs-test
         ports:
           - 5433:5432
         options: >-
@@ -131,7 +131,7 @@ jobs:
         env:
           POSTGRES_USER: sheriff
           POSTGRES_PASSWORD: sup3rs3cr3t
-          POSTGRES_DB: mod-monolith-arch-nodejs-test
+          POSTGRES_DB: clean-arch-nodejs-test
         ports:
           - 5433:5432
         options: >-

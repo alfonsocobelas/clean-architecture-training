@@ -17,7 +17,7 @@ services:
       class: ../../persistence/typeorm/typeorm-client.factory
       method: 'createClient'
     arguments: [
-      'mod-monolith-arch-nodejs',
+      'clean-arch-nodejs',
       '@TypeOrmConfig'
     ]
 

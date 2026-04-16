@@ -6,7 +6,7 @@ import { AircraftModelEntity } from 'src/modules/aircraft-models/infrastructure/
 import { AircraftStatus } from '../../../domain/aircraft-enums'
 import { AIRCRAFT_CONSTRAINTS as LIMITS } from '../../../domain/aircraft-constants'
 
-@Entity({ name: 'aircrafts', schema: 'fleet' })
+@Entity({ name: 'aircrafts', schema: 'operations' })
 @Check(`"totalFlightHours" >= ${LIMITS.FLIGHT_HOURS.MIN} AND "totalFlightHours" <= ${LIMITS.FLIGHT_HOURS.MAX}`)
 @Check(`"fuelLevelPercentage" >= ${LIMITS.FUEL_LEVEL.MIN} AND "fuelLevelPercentage" <= ${LIMITS.FUEL_LEVEL.MAX}`)
 @Check(`char_length("tailNumber") >= ${LIMITS.TAIL_NUMBER.MIN_LENGTH} AND char_length("tailNumber") <= ${LIMITS.TAIL_NUMBER.MAX_LENGTH}`)

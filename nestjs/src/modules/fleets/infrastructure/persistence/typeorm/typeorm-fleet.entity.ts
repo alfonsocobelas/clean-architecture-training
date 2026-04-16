@@ -1,5 +1,5 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, ManyToOne, JoinColumn, Index, Check } from 'typeorm'
-import { OperationRegion, FleetType, FleetStatus } from 'src/modules/fleets/domain/fleet-enums'
+import { FleetOperationRegion, FleetType, FleetStatus } from 'src/modules/fleets/domain/fleet-enums'
 import { CompanyEntity } from 'src/modules/companies/infrastructure/persistence/typeorm/typeorm-company.entity'
 import { FLEET_CONSTRAINTS as LIMITS } from '../../../domain/fleet-constants'
 
@@ -20,8 +20,8 @@ export class FleetEntity {
   @Column('varchar', { length: LIMITS.NAME.MAX_LENGTH, unique: true })
     name!: string
 
-  @Column('enum', { enum: OperationRegion })
-    operationRegion!: OperationRegion
+  @Column('enum', { enum: FleetOperationRegion })
+    operationRegion!: FleetOperationRegion
 
   @Column('enum', { enum: FleetType })
     type!: FleetType

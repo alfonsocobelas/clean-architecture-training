@@ -1,3 +1,5 @@
+import { Nullable } from 'src/common/nullable'
+
 export interface GetEngineOutput {
   id: string
   healthScore: number
@@ -6,5 +8,5 @@ export interface GetEngineOutput {
   cyclesSinceLastOverhaul: number
   isInstalled: boolean
   status: string
-  aircraftId: string | null
+  aircraftId: Nullable<string>
 }

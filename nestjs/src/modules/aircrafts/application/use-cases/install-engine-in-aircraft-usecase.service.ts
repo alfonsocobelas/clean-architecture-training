@@ -35,8 +35,8 @@ export class InstallEngineInAircraftUsecase {
       throw new EntityNotFoundError('AircraftModel', aircraft.modelId)
     }
 
-    aircraft.installEngine(input.engineId, model.numEngines)
-    engine.installInAircraft(input.aircraftId)
+    aircraft.installEngine(engine.id, model.numEngines)
+    engine.installInAircraft(aircraft.id)
 
     await this.txManager.runInTransaction(async () => {
       await this.aircraftRepository.save(aircraft)

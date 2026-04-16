@@ -1,5 +1,5 @@
 import { Aircraft } from 'src/modules/aircrafts/domain/aircraft'
-import { Nullable } from 'src/modules/shared/nullable'
+import { Nullable } from 'src/modules/shared/types'
 import { Criteria } from 'src/modules/shared/domain/query/criteria'
 import { AircraftReadModel } from 'src/modules/aircrafts/domain/aircraft-types'
 import { AircraftRepository } from 'src/modules/aircrafts/domain/aircraft.repository'

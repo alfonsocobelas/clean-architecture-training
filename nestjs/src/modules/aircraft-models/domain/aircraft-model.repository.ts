@@ -1,4 +1,4 @@
-import { Nullable } from 'src/modules/shared/nullable'
+import { Nullable } from 'src/modules/shared/types'
 import { AircraftModel } from './aircraft-model'
 
 export abstract class AircraftModelRepository {

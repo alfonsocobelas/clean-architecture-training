@@ -1,6 +1,6 @@
 import { EntityTarget } from 'typeorm'
 import { Injectable } from '@nestjs/common'
-import { Nullable } from 'src/modules/shared/nullable'
+import { Nullable } from 'src/modules/shared/types'
 import { TypeOrmRepository } from 'src/modules/shared/infrastructure/persistence/typeorm/typeorm.repository'
 import { TypeOrmCriteriaConverter } from 'src/modules/shared/infrastructure/persistence/typeorm/typeorm-criteria-converter'
 import { TypeOrmTransactionManager } from 'src/modules/shared/infrastructure/persistence/typeorm/typeorm-transaction-manager'

@@ -1,4 +1,5 @@
 import { Entity, PrimaryColumn, Column, ManyToOne, JoinColumn, OneToMany, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Check, Index } from 'typeorm'
+import { Nullable } from 'src/modules/shared/types'
 import { EngineEntity } from 'src/modules/engines/infrastructure/persistence/typeorm/typeorm-engine.entity'
 import { FleetEntity } from 'src/modules/fleets/infrastructure/persistence/typeorm/typeorm-fleet.entity'
 import { AircraftModelEntity } from 'src/modules/aircraft-models/infrastructure/persistence/typeorm/typeorm-aircraft-model.entity'
@@ -16,7 +17,7 @@ export class AircraftEntity {
     id!: string
 
   @Column('uuid', { nullable: true })
-    fleetId!: string | null
+    fleetId!: Nullable<string>
 
   @Column('uuid')
     modelId!: string

@@ -1,5 +1,5 @@
 import { Issue } from 'src/modules/issues/domain/issue'
-import { Nullable } from 'src/modules/shared/nullable'
+import { Nullable } from 'src/modules/shared/types'
 import { Criteria } from 'src/modules/shared/domain/query/criteria'
 import { MockRepository } from '../../shared/mocks/mock.repository'
 import { IssueRepository } from 'src/modules/issues/domain/issue.repository'

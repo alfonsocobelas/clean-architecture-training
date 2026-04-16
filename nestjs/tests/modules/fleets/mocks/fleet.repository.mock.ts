@@ -1,5 +1,5 @@
 import { Fleet } from 'src/modules/fleets/domain/fleet'
-import { Nullable } from 'src/modules/shared/nullable'
+import { Nullable } from 'src/modules/shared/types'
 import { Criteria } from 'src/modules/shared/domain/query/criteria'
 import { MockRepository } from '../../shared/mocks/mock.repository'
 import { FleetRepository } from 'src/modules/fleets/domain/fleet.repository'

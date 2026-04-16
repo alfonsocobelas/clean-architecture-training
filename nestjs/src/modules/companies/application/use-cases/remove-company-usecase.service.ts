@@ -16,6 +16,6 @@ export class RemoveCompanyUseCase {
       throw new EntityNotFoundError('Company', input.id)
     }
 
-    await this.repository.remove(input.id)
+    await this.repository.remove(company.id)
   }
 }

@@ -1,7 +1,7 @@
 import { AircraftModelRepository } from 'src/modules/aircraft-models/domain/aircraft-model.repository'
 import { MockRepository } from '../../shared/mocks/mock.repository'
 import { AircraftModel } from 'src/modules/aircraft-models/domain/aircraft-model'
-import { Nullable } from 'src/modules/shared/nullable'
+import { Nullable } from 'src/modules/shared/types'
 
 export class AircraftModelRepositoryMock
   extends MockRepository<AircraftModel>

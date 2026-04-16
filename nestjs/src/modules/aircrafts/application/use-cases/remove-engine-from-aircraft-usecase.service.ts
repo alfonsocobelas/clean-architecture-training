@@ -25,8 +25,8 @@ export class RemoveEngineFromAircraftUsecase {
       throw new EntityNotFoundError('Aircraft', input.aircraftId)
     }
 
-    aircraft.removeEngine(input.engineId)
-    engine.removeFromAircraft(input.aircraftId)
+    aircraft.removeEngine(engine.id)
+    engine.removeFromAircraft(aircraft.id)
 
     await Promise.all([
       this.aircraftRepository.save(aircraft),

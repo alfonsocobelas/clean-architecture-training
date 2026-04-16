@@ -1,4 +1,4 @@
-import { Nullable } from 'src/modules/shared/nullable'
+import { Nullable } from 'src/modules/shared/types'
 import { Criteria } from 'src/modules/shared/domain/query/criteria'
 import { Fleet } from './fleet'
 

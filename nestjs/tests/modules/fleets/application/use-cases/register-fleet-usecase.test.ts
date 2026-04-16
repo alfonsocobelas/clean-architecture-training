@@ -1,6 +1,6 @@
 import { RegisterFleetUseCase } from 'src/modules/fleets/application/use-cases/register-fleet-usecase.service'
 import { FleetWithNameSpecification } from 'src/modules/fleets/domain/specifications/fleet-with-name.specification'
-import { RegisterFleetInputMother } from './register-fleet-input.mother'
+import { RegisterFleetInputMother } from '../mothers/register-fleet-input.mother'
 import { FleetRepositoryMock } from '../../mocks/fleet.repository.mock'
 import { FleetMother } from '../../domain/fleet.mother'
 import { AircraftRepositoryMock } from '../../../aircrafts/mocks/aircraft.repository.mock'

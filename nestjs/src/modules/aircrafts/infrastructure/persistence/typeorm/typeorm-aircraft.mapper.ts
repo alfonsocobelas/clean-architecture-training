@@ -2,8 +2,8 @@ import { AircraftEntity } from './typeorm-aircraft.entity'
 import { Aircraft } from '../../../domain/aircraft'
 import { AircraftReadModel } from '../../../domain/aircraft-types'
 
-export const AircraftMapper = {
-  toDomain(entity: AircraftEntity): Aircraft {
+export class AircraftMapper {
+  static toDomain(entity: AircraftEntity): Aircraft {
     return Aircraft.reconstruct({
       id: entity.id,
       fleetId: entity.fleetId ?? undefined,
@@ -15,9 +15,9 @@ export const AircraftMapper = {
       status: entity.status,
       isActive: entity.isActive
     })
-  },
+  }
 
-  toReadModel(entity: AircraftEntity): AircraftReadModel {
+  static toReadModel(entity: AircraftEntity): AircraftReadModel {
     return {
       id: entity.id,
       fleetId: entity.fleetId ?? undefined,
@@ -38,9 +38,9 @@ export const AircraftMapper = {
         healthScore: engine.healthScore
       }))
     }
-  },
+  }
 
-  toPersistence(domain: Aircraft): AircraftEntity {
+  static toPersistence(domain: Aircraft): AircraftEntity {
     const entity = new AircraftEntity()
     entity.id = domain.id
     entity.fleetId = domain.fleetId ?? null

@@ -1,8 +1,8 @@
 import { Fleet } from 'src/modules/fleets/domain/fleet'
 import { FleetEntity } from './typeorm-fleet.entity'
 
-export const FleetMapper = {
-  toDomain(entity: FleetEntity): Fleet {
+export class FleetMapper {
+  static toDomain(entity: FleetEntity): Fleet {
     return Fleet.reconstruct({
       id: entity.id,
       aircraftIds: entity.aircraftIds,
@@ -13,9 +13,9 @@ export const FleetMapper = {
       maintenanceBudget: entity.maintenanceBudget,
       status: entity.status
     })
-  },
+  }
 
-  toPersistence(domain: Fleet): FleetEntity {
+  static toPersistence(domain: Fleet): FleetEntity {
     const entity = new FleetEntity()
     entity.id = domain.id
     entity.aircraftIds = domain.aircraftIds

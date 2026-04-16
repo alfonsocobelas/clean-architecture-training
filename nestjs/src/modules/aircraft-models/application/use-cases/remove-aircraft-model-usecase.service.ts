@@ -23,7 +23,6 @@ export class RemoveAircraftModelUseCase {
     }
 
     model.ensureCanBeRemoved(aircraftCount)
-
-    await this.modelRepository.remove(input.id)
+    await this.modelRepository.remove(model.id)
   }
 }

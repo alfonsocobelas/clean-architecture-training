@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { DataSource, EntityMetadata } from 'typeorm'
+import { Nullable } from 'src/common/nullable'
 import { EnvironmentArranger } from '../../arranger/environment-arranger'
 
 export default class TypeOrmEnvironmentArranger extends EnvironmentArranger {
@@ -26,9 +27,9 @@ export default class TypeOrmEnvironmentArranger extends EnvironmentArranger {
     await repository.save(dataArray)
   }
 
-  async findOneBy<T>(entity: { new (): T }, query: any): Promise<T | null> {
+  async findOneBy<T>(entity: { new (): T }, query: any): Promise<Nullable<T>> {
     const repository = (await this._client).getRepository(entity)
-    return repository.findOneBy(query) as T | null
+    return repository.findOneBy(query) as Nullable<T>
   }
 
   async find<T>(entity: { new (): T }, query: any): Promise<T[]> {

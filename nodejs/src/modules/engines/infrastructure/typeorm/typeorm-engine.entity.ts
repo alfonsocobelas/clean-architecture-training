@@ -1,4 +1,5 @@
 import { Entity, PrimaryColumn, Column, ManyToOne, JoinColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Check, Index } from 'typeorm'
+import { Nullable } from 'src/common/nullable'
 import { AircraftEntity } from '../../../aircrafts/infrastructure/typeorm/typeorm-aircraft.entity'
 import { EngineStatus } from '../../domain/engine-enums'
 import { ENGINE_CONSTRAINTS as LIMITS } from '../../domain/engine-constants'
@@ -31,7 +32,7 @@ export class EngineEntity {
     isInstalled!: boolean
 
   @Column('uuid', { nullable: true })
-    aircraftId!: string | null
+    aircraftId!: Nullable<string>
 
   // --- AUDIT FIELDS --- //
   @CreateDateColumn({ type: 'timestamptz' })

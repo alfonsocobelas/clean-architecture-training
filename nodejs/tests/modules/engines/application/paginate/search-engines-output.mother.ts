@@ -1,12 +1,13 @@
+import { Nullable } from 'src/common/nullable'
+import { Engine } from 'src/modules/engines/domain/engine'
 import { SearchEnginesOutput } from 'src/modules/engines/application/paginate/search-engines-output.dto'
 import { CursorPaginatedOutput } from 'src/modules/shared/application/search-output.dto'
-import { Engine } from 'src/modules/engines/domain/engine'
 
 export class SearchEnginesOutputMother {
   static fromDomain(
     items: Engine[],
     hasMore: boolean,
-    nextCursor: string | null
+    nextCursor: Nullable<string>
   ): CursorPaginatedOutput<SearchEnginesOutput> {
     return {
       nextCursor,

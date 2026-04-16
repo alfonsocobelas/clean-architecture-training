@@ -1,5 +1,5 @@
 import { Engine } from 'src/modules/engines/domain/engine'
-import { Nullable } from 'src/modules/shared/nullable'
+import { Nullable } from 'src/modules/shared/types'
 import { Criteria } from 'src/modules/shared/domain/query/criteria'
 import { EngineRepository } from 'src/modules/engines/domain/engine.repository'
 import { MockRepository } from '../../shared/mocks/mock.repository'

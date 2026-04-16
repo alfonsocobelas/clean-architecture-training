@@ -1,8 +1,8 @@
 import { Issue } from 'src/modules/issues/domain/issue'
 import { IssueEntity } from './typeorm-issue.entity'
 
-export const IssueMapper = {
-  toDomain(entity: IssueEntity): Issue {
+export class IssueMapper {
+  static toDomain(entity: IssueEntity): Issue {
     return Issue.reconstruct({
       id: entity.id,
       code: entity.code,
@@ -13,9 +13,9 @@ export const IssueMapper = {
       aircraftId: entity.aircraftId ?? undefined,
       engineId: entity.engineId ?? undefined
     })
-  },
+  }
 
-  toPersistence(domain: Issue): IssueEntity {
+  static toPersistence(domain: Issue): IssueEntity {
     const entity = new IssueEntity()
     entity.id = domain.id
     entity.code = domain.code

@@ -1,7 +1,7 @@
 import { isValidUuidV7 } from 'src/modules/shared/domain/validators/validateId'
 import { FleetError } from './fleet-errors'
 import { FleetCreateProps, FleetProps } from './fleet-types'
-import { OperationRegion, FleetType, FleetStatus } from './fleet-enums'
+import { FleetOperationRegion, FleetType, FleetStatus } from './fleet-enums'
 import { FLEET_CONSTRAINTS as LIMITS } from './fleet-constants'
 
 export class Fleet {
@@ -12,7 +12,7 @@ export class Fleet {
   readonly companyId: string
   readonly name: string
   readonly type: FleetType
-  readonly operationRegion: OperationRegion
+  readonly operationRegion: FleetOperationRegion
   readonly maintenanceBudget: number
 
   private constructor(props: FleetProps) {
@@ -117,7 +117,7 @@ export class Fleet {
   }
 
   private static validateOperationRegion(value: string): void {
-    if (!(value in OperationRegion)) {
+    if (!(value in FleetOperationRegion)) {
       throw new FleetError(`Invalid operation region: ${value}`)
     }
   }

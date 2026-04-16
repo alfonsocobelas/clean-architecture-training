@@ -1,12 +1,13 @@
 import { SearchEnginesOutput } from 'src/modules/engines/application/dtos/search-engines-output.dto'
 import { CursorPaginatedOutput } from 'src/modules/shared/application/dtos/search-output.dto'
 import { Engine } from 'src/modules/engines/domain/engine'
+import { Nullable } from 'src/modules/shared/types'
 
 export class SearchEnginesOutputMother {
   static fromDomain(
     items: Engine[],
     hasMore: boolean,
-    nextCursor: string | null
+    nextCursor: Nullable<string>
   ): CursorPaginatedOutput<SearchEnginesOutput> {
     return {
       nextCursor,

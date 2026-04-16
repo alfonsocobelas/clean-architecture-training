@@ -1,8 +1,8 @@
 import { Engine } from 'src/modules/engines/domain/engine'
 import { EngineEntity } from './typeorm-engine.entity'
 
-export const EngineMapper = {
-  toDomain(entity: EngineEntity): Engine {
+export class EngineMapper {
+  static toDomain(entity: EngineEntity): Engine {
     return Engine.reconstruct({
       id: entity.id,
       healthScore: entity.healthScore,
@@ -13,9 +13,9 @@ export const EngineMapper = {
       isInstalled: entity.isInstalled,
       aircraftId: entity.aircraftId ?? undefined
     })
-  },
+  }
 
-  toPersistence(domain: Engine): EngineEntity {
+  static toPersistence(domain: Engine): EngineEntity {
     const entity = new EngineEntity()
     entity.id = domain.id
     entity.healthScore = domain.healthScore

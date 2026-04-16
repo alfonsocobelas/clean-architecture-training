@@ -1,5 +1,5 @@
 import { RetireAircraftFromFleetUsecase } from 'src/modules/fleets/application/use-cases/retire-aircraft-from-fleet-usecase.service'
-import { RetireAircraftFromFleetInputMother } from './retire-aircraft-from-fleet-input.mother'
+import { RetireAircraftFromFleetInputMother } from '../mothers/retire-aircraft-from-fleet-input.mother'
 import { AircraftRepositoryMock } from '../../../aircrafts/mocks/aircraft.repository.mock'
 import { FleetRepositoryMock } from '../../mocks/fleet.repository.mock'
 import { AircraftBuilder } from '../../../aircrafts/domain/aircraft.builder'

@@ -2,7 +2,7 @@ import fc from 'fast-check'
 import { v7 as uuidv7 } from 'uuid'
 import { normalizeString } from 'src/modules/shared/utils/normalize'
 import { Fleet } from 'src/modules/fleets/domain/fleet'
-import { FleetStatus, FleetType, OperationRegion } from 'src/modules/fleets/domain/fleet-enums'
+import { FleetStatus, FleetType, FleetOperationRegion } from 'src/modules/fleets/domain/fleet-enums'
 import { FLEET_CONSTRAINTS as LIMITS } from 'src/modules/fleets/domain/fleet-constants'
 import { FleetBuilder } from './fleet.builder'
 
@@ -121,8 +121,8 @@ describe('Fleet domain model (unit/property-based tests)', () => {
     describe('operation region validation', () => {
       it('should throw if operation region is invalid', () => {
         fc.assert(
-          fc.property(fc.string().filter(s => !(s in OperationRegion)), (invalidRegion) => {
-            const builder = FleetBuilder.aFleet().withOperationRegion(invalidRegion as OperationRegion)
+          fc.property(fc.string().filter(s => !(s in FleetOperationRegion)), (invalidRegion) => {
+            const builder = FleetBuilder.aFleet().withOperationRegion(invalidRegion as FleetOperationRegion)
 
             expect(() => builder.create()).toThrow(`Invalid operation region: ${invalidRegion}`)
           })

@@ -1,12 +1,13 @@
 import { SearchIssuesOutput } from 'src/modules/issues/application/dtos/search-issues-output.dto'
 import { CursorPaginatedOutput } from 'src/modules/shared/application/dtos/search-output.dto'
 import { Issue } from 'src/modules/issues/domain/issue'
+import { Nullable } from 'src/modules/shared/types'
 
 export class SearchIssuesOutputMother {
   static fromDomain(
     items: Issue[],
     hasMore: boolean,
-    nextCursor: string | null
+    nextCursor: Nullable<string>
   ): CursorPaginatedOutput<SearchIssuesOutput> {
     return {
       nextCursor,

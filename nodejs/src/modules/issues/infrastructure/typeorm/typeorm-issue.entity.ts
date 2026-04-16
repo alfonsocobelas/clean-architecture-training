@@ -1,4 +1,5 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, ManyToOne, JoinColumn, Check, Index } from 'typeorm'
+import { Nullable } from 'src/common/nullable'
 import { AircraftEntity } from 'src/modules/aircrafts/infrastructure/typeorm/typeorm-aircraft.entity'
 import { EngineEntity } from 'src/modules/engines/infrastructure/typeorm/typeorm-engine.entity'
 import { IssuePartCategory, IssueSeverityLevel } from '../../domain/issue-enums'
@@ -17,10 +18,10 @@ export class IssueEntity {
     code!: string
 
   @Column('uuid', { nullable: true })
-    aircraftId!: string | null
+    aircraftId!: Nullable<string>
 
   @Column('uuid', { nullable: true })
-    engineId!: string | null
+    engineId!: Nullable<string>
 
   @Column('varchar', { length: LIMITS.DESCRIPTION.MAX_LENGTH })
     description!: string

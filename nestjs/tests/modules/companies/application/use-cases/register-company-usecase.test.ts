@@ -1,5 +1,5 @@
 import { RegisterCompanyUseCase } from 'src/modules/companies/application/use-cases/register-company-usecase.service'
-import { RegisterCompanyInputMother } from './register-company-input.mother'
+import { RegisterCompanyInputMother } from '../mothers/register-company-input.mother'
 import { CompanyMother } from '../../domain/company.mother'
 import { CompanyRepositoryMock } from '../../mocks/company.repository.mock'
 
